@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Курс валют</title>
+    <link rel="stylesheet" href="lib/jqueryui/jquery-ui.css"/>
+    <link rel="stylesheet" href="lib/css/app.css"/>
+    <script src="lib/jqueryui/jquery-3.6.0.min.js"></script>
+    <script src="lib/jqueryui/jquery-ui.js"></script>
+</head>
+<body>
+<script>
+   // Запуск механизма получения курса валют
+   var cbr = {};
+   var onLoadCbd = function(jsonCbrObj){
+      cbr = jsonCbrObj;
+   }
+   CbrExchangeRates.regCallback("onLoadCbd");
+   CbrExchangeRates.getJson();
+</script>
+<center class="head_block">
+    <div>Курс валют</div>
+    <input id="filterVal" style="left:1;width:60%;" placeholder="фильтр списка валют..." /><button onclick="CbrExchangeRates.getJson();CbrExchangeRates.reloadPage();">Обновить</button> <br/>
+</center>
+
+<div id="accordion" class="body_block">
+</div>
+
+<div id="dialog" title="Калькулятор" style="display:none;" >
+    <span>Введите количество валюты для покупки:</span><br/>
+    <input id="inputVal" style="width:85%;" type="number" onchange="calcVal();" onkeypress="" min="0"/>
+    <button style="width:10%;" onclick='calcVal();'>$</button>
+    <br/>
+    <span>Сумма в рублях:</span>
+    <input id="resultVal" style="width:95%;" readonly="true" onclick="copyResultToClipboard(this)" /><br/>
+    <br/>
+</div>
+
+</body>
+<script src="lib/js/app.js"></script>
+</html>
