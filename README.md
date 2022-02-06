@@ -1,7 +1,5 @@
 # ListOfCurrencies
 Тестовое задание. Курс Android. 
 
-<video id="player" playsinline controls data-poster="/path/to/poster.jpg">
-  <source src="https://github.com/MyasnikovIA/ListOfCurrencies/blob/main/ExchangeRates.mp4?raw=true" type="video/mp4" />
-</video>
-
+<br> **Результат**:  https://youtu.be/7c3x6jsWJws
+<br>[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7c3x6jsWJws/0.jpg)](https://www.youtube.com/watch?v=7c3x6jsWJws)
